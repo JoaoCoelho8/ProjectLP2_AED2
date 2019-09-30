@@ -1,0 +1,2 @@
+Ze,7,12,e2,[Futebol;Tv],[Falar;Escrever]
+Antonio,13,14,,[Futebol;Tv],[Falar;Escrever]

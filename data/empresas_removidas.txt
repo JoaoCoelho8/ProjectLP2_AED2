@@ -1,0 +1,2 @@
+﻿Google, Point: {3.0, 3.0}
+Empregados: João, 

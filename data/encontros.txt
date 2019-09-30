@@ -1,0 +1,2 @@
+﻿Google: Festa Google; Point: {5.0, 10.0}; Convidados: João, 
+Samsung: Lançamento de telemóvel; Point: {10.0, 10.0}

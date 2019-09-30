@@ -1,0 +1,2 @@
+﻿João; Point: {1.0, 2.0}; Empregado: true; Empresa: Google; Interesses: Futebol, Carros, ; Competencias: Ler, ; Histórico de empresas: Google, 
+Pedro; Point: {3.0, 4.0}; Empregado: false; Interesses: Futebol, ; Competencias: Ler, 

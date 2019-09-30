@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1228.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ufp.inf.projeto.projetoFxmlController">
+   <children>
+      <MenuBar prefHeight="36.0" prefWidth="1228.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <Menu mnemonicParsing="false" text="Open">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Open txt Files">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleReadtxtGrafoRelacoesAction" text="Grafo de relações " />
+                              <MenuItem mnemonicParsing="false" onAction="#handleReadtxtGrafoSeguidoresAction" text="Grafo de seguidores" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleReadtxtGrafoCaminhosAction" text="Grafo de caminhos" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Open bin Files">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleReadbinGrafoRelacoesAction" text="Grafo de relações " />
+                              <MenuItem mnemonicParsing="false" onAction="#handleReadbinGrafoSeguidoresAction" text="Grafo de seguidores" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleReadbinGrafoCaminhosAction" text="Grafo de caminhos" />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Save">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Save txt Files">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavetxtGrafoRelacoesAction" text="Grafo de relações " />
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavetxtGrafoSeguidoresAction" text="Grafo de seguidores" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavetxtGrafoCaminhosAction" text="Grafo de caminhos" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Save bin Files">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavebinGrafoRelacoesAction" text="Grafo de relações " />
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavebinGrafoSeguidoresAction" text="Grafo de seguidores" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleSavebinGrafoCaminhosAction" text="Grafo de caminhos" />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#handleExitAction" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAboutAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="39.0" prefHeight="823.0" prefWidth="1228.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Graph">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="1228.0">
+                     <children>
+                        <Group fx:id="graphGroup" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Edit Graph">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="8.0" layoutY="3.0" prefHeight="773.0" prefWidth="1212.0">
+                           <children>
+                              <Button fx:id="carregarGrafo" mnemonicParsing="false" onAction="#addDisciplinesToComboBox" text="Carregar Grafos" />
+                              <ComboBox fx:id="GrafoComboBox" onAction="#handleSelectGraph" prefHeight="39.0" prefWidth="447.0" />
+                              <Label prefHeight="52.0" prefWidth="175.0" text="Add Edge" textAlignment="CENTER" />
+                              <HBox fx:id="addedge" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="AddEdgeFromField" promptText="From" />
+                                    <TextField fx:id="AddEdgeToField" layoutX="10.0" layoutY="10.0" promptText="To" />
+                                    <TextField fx:id="AddEdgeWeightField" layoutX="10.0" layoutY="10.0" promptText="Weight" />
+                                    <TextField fx:id="AddEdgeTimeField" layoutX="458.0" layoutY="10.0" promptText="Time" />
+                                    <Button fx:id="addEdge" mnemonicParsing="false" onAction="#handleButtonAddEdgeAction" text="Add" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="175.0" text="Remove Edge" textAlignment="CENTER" />
+                              <HBox layoutX="10.0" layoutY="62.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="RemoveEdgeFromField" promptText="From" />
+                                    <TextField fx:id="RemoveEdgeToField" layoutX="10.0" layoutY="10.0" promptText="To" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonRemoveEdgeAction" text="Remove" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="62.0" prefHeight="52.0" prefWidth="175.0" text="Edit Edge" textAlignment="CENTER" />
+                              <HBox layoutX="10.0" layoutY="214.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="EditEdgeFromField" promptText="From" />
+                                    <TextField fx:id="EditEdgeToField" layoutX="10.0" layoutY="10.0" promptText="To" />
+                                    <TextField fx:id="EditEdgeWeightField" layoutX="10.0" layoutY="10.0" promptText="Weight" />
+                                    <TextField fx:id="EditEdgeTimeField" layoutX="458.0" layoutY="10.0" promptText="Time" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonEditEdgeAction" text="Add" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Manage Information">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1228.0">
+                     <children>
+                        <TextArea fx:id="resultArea" disable="true" editable="false" layoutX="80.0" layoutY="333.0" />
+                        <HBox fx:id="RequisitoA" layoutX="80.0" layoutY="145.0" prefHeight="102.0" prefWidth="1080.0" visible="false">
+                           <children>
+                              <TextField fx:id="InserirProfissionaisProcurar" promptText="Company" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSeachProfissionals" text="Search" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="RequisitoB" layoutX="80.0" layoutY="145.0" prefHeight="102.0" prefWidth="1080.0" visible="false">
+                           <children>
+                              <TextField fx:id="InserirEncontrosaProcurar" promptText="Meetings" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSearchMeetings" text="Search" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="RequisitoD" layoutX="80.0" layoutY="123.0" prefHeight="201.0" prefWidth="472.0" visible="false">
+                           <children>
+                              <TextArea fx:id="InserirCompetenciasProcurar" prefHeight="201.0" prefWidth="387.0" promptText="Ability" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSearchCompetencias" text="Search" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="RequisitoE" layoutX="80.0" layoutY="122.0" prefHeight="201.0" prefWidth="481.0" visible="false">
+                           <children>
+                              <TextArea fx:id="InserirCompetenciasProcurarE" prefHeight="201.0" prefWidth="395.0" promptText="Ability" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSearchCompetenciasE" text="Search" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="RequisitoF" layoutX="74.0" layoutY="172.0" prefHeight="102.0" prefWidth="1080.0" visible="false">
+                           <children>
+                              <TextField fx:id="InserirProfissionalParaObterAmizades" promptText="Professional" />
+                              <TextField fx:id="InserirEmpresaQueOProfissionalQuerSeguir" layoutX="10.0" layoutY="10.0" promptText="Company" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSearchCirculoDeAmizades" text="Search" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="RequisitoH" layoutX="90.0" layoutY="155.0" prefHeight="102.0" prefWidth="1080.0" visible="false">
+                           <children>
+                              <TextField fx:id="InserirDataIinico" promptText="Start Date" />
+                              <TextField fx:id="InserirDataFim" layoutX="10.0" layoutY="10.0" promptText="End Date" />
+                              <Button mnemonicParsing="false" onAction="#handleButtonSearchMettingsByDates" text="Search" />
+                           </children>
+                        </HBox>
+                        <ComboBox fx:id="PesquisaComboBox" layoutX="80.0" layoutY="32.0" onAction="#handleSelectPesquisa" onShowing="#handleCarregarPesquisasParaComboBox" promptText="Search Information" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

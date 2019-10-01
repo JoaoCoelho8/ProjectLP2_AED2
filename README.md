@@ -1,2 +1,2 @@
 # ProjectLP2_AED2
-Projeto das disciplinas "Linguagens de Programação 2" e "Algorítmos e Estruturas de Dados 2"
+"Programming Languages 2"  and "Data Structures and Algorithms 2" courses project
